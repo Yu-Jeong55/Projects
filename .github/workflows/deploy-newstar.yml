@@ -7,6 +7,7 @@ on:
     paths:
       - "newstar/**"
       - ".github/workflows/deploy-newstar.yml"
+      - "README.md"
 
 jobs:
   build:

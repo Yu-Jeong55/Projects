@@ -224,5 +224,7 @@ prolog-front
 - <a href ="#"> 최종발표자료 </a>
 
 ## ✔️ Pro.log 서비스 화면
+
 ### 메인화면 (캘린더뷰)
+
 ![메인화면](/exec/Pro.log_main.gif)
