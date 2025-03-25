@@ -9,6 +9,6 @@
       "state": ["src/state/*"]
     }
   },
-  "include": ["src", "**/*.js", "**/*.jsx"],
+  "include": ["src", "**/*.js", "**/*.jsx", "copy-dist.cjs"],
   "exclude": ["node_modules"]
 }

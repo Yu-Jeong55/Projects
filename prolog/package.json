@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && mkdir -p dist/projects/prolog && cp dist/index.html dist/projects/prolog/ && cp -r dist/assets dist/projects/prolog/",
+    "build": "vite build && node copy-dist.cjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "fs-extra": "^11.3.0",
     "install": "^0.13.0",
     "npm": "^11.2.0",
     "prettier": "^3.5.3",
