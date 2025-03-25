@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Router basename={import.meta.env.PUBLIC_URL}>
+      <Router basename="/projects/newstar">
         <Routes>
           <Route path="/" element={<StartPageWrapper />}>
             <Route index element={<Intro />} />

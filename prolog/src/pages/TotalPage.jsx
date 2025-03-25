@@ -28,7 +28,7 @@ const TotalPageContent = styled.div`
 
 export default function Result() {
   return (
-    <Router basename={import.meta.env.PUBLIC_URL}>
+    <Router basename="/projects/prolog">
       <AppContainer>
         <Sidebar />
         <Headbar />
