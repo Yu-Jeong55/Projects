@@ -1,0 +1,43 @@
+name: Deploy Prolog to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "newstar/**"
+      - "prolog/**"
+      - ".github/workflows/deploy.yml"
+      - "README.md"
+      - "package.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies for sub-projects
+        run: |
+          cd newstar && npm ci && cd ..
+          cd prolog && npm ci && cd ..
+
+      - name: Install fs-extra for copy script
+        run: npm install fs-extra --save-dev
+
+      - name: Build all projects
+        run: npm run build:all
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true

@@ -14,10 +14,10 @@ async function copyBuild() {
     path.join(distPath, "index.html"),
     path.join(targetPath, "index.html")
   );
-  await fse.copy(
-    path.join(distPath, "404.html"),
-    path.join(targetPath, "404.html")
-  );
+  // await fse.copy(
+  //   path.join(distPath, "404.html"),
+  //   path.join(targetPath, "404.html")
+  // );
 
   // 폴더 복사
   await fse.copy(
